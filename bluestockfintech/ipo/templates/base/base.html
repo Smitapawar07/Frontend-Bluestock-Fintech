@@ -247,10 +247,11 @@
       
                 </ul>
       
-                <a class="nav-link" href="#">Sign In</a>
+                <a class="nav-link" href="{% url 'login' %}">Sign In</a>
       
-                <button class="btn bluestock-app px-4 mx-2 position-relative" data-bs-toggle="modal"
-                  data-bs-target="#feedbackModal">
+                {% comment %} <button class="btn bluestock-app px-4 mx-2 position-relative" data-bs-toggle="modal" {% endcomment %}
+                  {% comment %} data-bs-target="#feedbackModal" onclick="window.location.href='YOUR_SIGN_UP_URL'"> {% endcomment %}
+                <button class="btn bluestock-app px-4 mx-2 position-relative" onclick="window.location.href='{% url 'signup' %}'">
                   <span class="d-flex align-items-center">
                     <span class="small text-white">Sign Up Now&nbsp;
                       <span class="position-absolute top-0 start-100 translate-middle">

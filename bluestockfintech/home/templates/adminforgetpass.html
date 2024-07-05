@@ -110,11 +110,12 @@ opacity: 0px;
      <h2>Forgot Password?</h2>
         <p>Enter your email address to get the <br>password reset link.</p>
         <form>
+            <label for="email" style="color:#000">Email Address</label>
             <input type="email" placeholder="hello@bluestock.in">
             <button type="submit">Password Reset</button>
         </form>
         <div class="back-link">
-            <a href="#">Back to login</a>
+            <a href="{% url 'login' %}">Back to login</a>
         </div>
         <div class="recaptcha">
             <!-- Replace with actual reCAPTCHA implementation -->

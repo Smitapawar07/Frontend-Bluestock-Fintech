@@ -13,5 +13,5 @@ def adminlogin(request):
 def adminforgetpass(request):
     return render(request, 'adminforgetpass.html')
 
-def adminsignin(request):
-    return render(request, 'adminsignin.html')
+def adminsignup(request):
+    return render(request, 'adminsignup.html')

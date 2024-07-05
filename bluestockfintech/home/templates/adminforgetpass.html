@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bluestock - Forgot Password</title>
+    <style>
+        
+        body {
+            font-style: poppins;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffffff;
+        }
+        .container {
+           
+            {% comment %} padding: 30px;
+            border-radius: 8px;
+            width: 320px; {% endcomment %}
+
+  width: Hug (400px)px;
+height: Hug (416px)px;
+top: 230px;
+left: 520px;
+gap: 40px;
+opacity: 0px;
+
+	}
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+            
+
+        }
+        .logo img {
+            height: 30px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            
+        }
+        p {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #5d3fd3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back-link a {
+            color: #5d3fd3;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .recaptcha {
+            text-align: right;
+            margin-top: 20px;
+	    position:absolute;
+	    bottom: 8px;
+	    right: 8px;
+
+
+	}
+
+	.recaptcha img {
+            width: 70px;  
+            height: auto;
+            width: 96px;
+height: 86px;
+gap: 0px;
+opacity: 0px;
+
+
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+	 {% comment %} <img src="bluestock-logo.png" alt="BLUESTOCK"></div> {% endcomment %}
+    
+     <img src="{% static 'home/assets/site_logo.png' %}" alt="Bluestock Logo" class="logo">
+     <h2>Forgot Password?</h2>
+        <p>Enter your email address to get the <br>password reset link.</p>
+        <form>
+            <input type="email" placeholder="hello@bluestock.in">
+            <button type="submit">Password Reset</button>
+        </form>
+        <div class="back-link">
+            <a href="#">Back to login</a>
+        </div>
+        <div class="recaptcha">
+            <!-- Replace with actual reCAPTCHA implementation -->
+            {% comment %} <img src="recaptcha-icon.png" alt="reCAPTCHA" width="30"> {% endcomment %}
+            <img src="{% static 'home/assets/recaptcha-icon.png' %}" alt="reCAPTCHA" width="30">
+
+        </div>
+    </div>
+</body>
+</html>

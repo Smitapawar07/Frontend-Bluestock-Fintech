@@ -116,7 +116,7 @@ opacity: 0px;
             text-decoration: none;
 	    text-shadow:  2px 2px 4px rgba(0, 0, 0, 0.2);
 }
-        .recaptcha {
+        {% comment %} .recaptcha {
 	        font-style: poppins;
             border: 1px solid #ddd;
             border-radius: 10px;
@@ -132,7 +132,33 @@ opacity: 0px;
 	        font-style: poppins;
 	        margin-left: 10px;
             accent-color: green;
+        } {% endcomment %}
+
+
+
+        .captcha {
+            display: flex;
+            align-items: center;
+            position: relative;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 5px;
         }
+        .captcha img {
+            margin-left: auto;
+            height: 30px;
+            width: 30px;
+        }
+        .captcha label {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+        }
+        .captcha input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+
+        
         {% comment %} .keep-signed-in input[type="checkbox"] {
             accent-color: #6f42c1; /* Changes the color of the checkbox */  
         } {% endcomment %}
@@ -274,11 +300,21 @@ opacity: 0px;
             <div class="terms">
               <p>By continuing, you agree to our<a href="#"> terms of service.</a></p>
             </div>
-            <div class="recaptcha">
+
+
+            <div class="captcha">
+                <input type="checkbox" id="not-robot" name="not-robot" required>
+                <label for="not-robot">&nbsp;&nbsp;I'm not a robot</label>
+                {% comment %} <img src="{% static 'home/assets/recaptcha-icon.png' %}" alt="reCAPTCHA" style="margin-left:100px; float:right" height: "30px;" width="30px"> {% endcomment %}
+                <img src="{% static 'home/assets/recaptcha-icon.png' %}" alt="reCAPTCHA">
+                <div class="recaptcha"></div>
+            </div>
+
+            {% comment %} <div class="recaptcha">
                 <input type="checkbox" id="robot" name="robot" required>
                 <label for="robot">I'm not a robot</label>
                 <img src="{% static 'home/assets/recaptcha-icon.png' %}" alt="reCAPTCHA" style="margin-left:100px;" height: "30px;" width="30px">
-            </div>
+            </div> {% endcomment %}
 
             {% comment %} <div class="keep-signed-in">
                 <input type="checkbox" id="keep-signed-in" name="keep-signed-in">

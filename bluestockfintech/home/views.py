@@ -15,3 +15,9 @@ def adminforgetpass(request):
 
 def adminsignup(request):
     return render(request, 'adminsignup.html')
+
+def upcomingIPO(request):
+    return render(request, 'upcomingIPO.html')
+
+def registerIPO(request):
+    return render(request, 'registerIPO.html')

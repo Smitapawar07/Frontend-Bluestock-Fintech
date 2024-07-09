@@ -115,9 +115,9 @@
             border-radius: 5px; {% endcomment %}
 
             margin-right: 10px;
-	    font-style: poppins;
-	    margin-left: 10px;
-	    
+            font-style: poppins;
+            margin-left: 10px;
+            
         }
         
         .keep-signed-in {
@@ -250,7 +250,8 @@
             <img src="{% static 'home/assets/site_logo.png' %}" alt="Bluestock Logo" class="logo">
             {% comment %} <h1>BLUESTOCK</h1> {% endcomment %}
         </div>
-        <form class="login-form">
+        <form class="login-form" method="POST">
+            {% csrf_token %}
             <label for="email" style="color:#000">Email Address</label>
             <input type="email" id="email" name="email" value="smita@gmail.com" required>
 

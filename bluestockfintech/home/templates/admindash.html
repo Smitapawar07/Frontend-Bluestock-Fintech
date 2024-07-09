@@ -6,7 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IPO Dashboard</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-KxZyHJhp/PyYfzQzx9MC4YR1tuPsExq4OmVNc1b0fB6Rw3D8w3AbwCSk+8PjIVPH3b8JkIb/+9K1Z1jT5IlZIg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
+    {% include 'styles.css' %}
     .circle {
         border-radius: 50%;
         text-align: center;
@@ -53,67 +57,123 @@
   </style>
 </head>
 <body>
+
   <div class="container-fluid">
-    <div class="row">
-      <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+    <div class="sidebar">
+        
         <div class="sidebar-sticky">
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">
-                <img src="ipo/static/market_stat.png" alt="Bluestock Fintech" style="width: 30px; height: 30px;">
-                Dashboard
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="file"></span>
-                Manage IPO
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="shopping-cart"></span>
-                IPO Subscription
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="users"></span>
-                IPO Allotment
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="bar-chart-2"></span>
-                Settings
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="layers"></span>
-                API Manager
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="layers"></span>
-                Accounts
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="layers"></span>
-                Help
-              </a>
-            </li>
-          </ul>
+            <div class="company-logo">
+                <div class="placeholder-logo" id="company-logo-placeholder">BF</div>
+                <span>Bluestock Fintech</span>
+            </div>
+           
+            <ul class="nav flex-column">
+               
+                <li class="nav-item">
+                    
+                    <a class="nav-link " href="#">
+                        <img src="{% static 'ipo/assets/img/food.png' %}">
+                        <span data-feather="home"></span>
+                        Food Order
+                    </a>
+                </li>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">
+                       <img src="{% static 'ipo/assets/img/managd.png' %}">
+                        <span data-feather="home"></span>
+                        Manage IPO
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <img src="{% static 'ipo/assets/img/iposub.png' %}">
+                        <span data-feather="file"></span>
+                        IPO Subscription
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <img src="{% static 'ipo/assets/img/ipoallot.png' %}">
+                        <span data-feather="shopping-cart"></span>
+                        IPO Allotment
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <img src="{% static 'ipo/assets/img/setting.png' %}">
+                        <span data-feather="users"></span>
+                        Settings
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <img src="{% static 'ipo/assets/img/api manager.png' %}">
+                        <span data-feather="bar-chart-2"></span>
+                        API Manager
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <img src="{% static 'ipo/assets/img/accounts.png' %}">
+                        <span data-feather="layers"></span>
+                        Accounts
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <img src="{% static 'ipo/assets/img/help.png' %}">
+                        <span data-feather="help-circle"></span>
+                        Help
+                    </a>
+                </li>
+            </ul>
         </div>
-      </nav>
-      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    </div>
+
+      <main role="main" class="main-content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white" style="padding-left: 20px; padding-right: 20px;">
+            <div class="container-fluid">
+                <form class="d-flex">
+                    <div class="input-group custom-input-group" style="width:600px; padding-left:20px;">
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn" type="submit"><i class="bi bi-search"></i></button>
+                    </div>
+                </form>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {% comment %} <img src="user-profile.jpg" alt="User Profile"> {% endcomment %}
+                                <div class="user-profile">
+                                    <div id="user-profile-placeholder" class="placeholder-profile">JD</div>
+                                </div>                                    
+                                <span class="username">Hi, Vishal</span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="bi bi-bell"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        {% comment %} <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4"> {% endcomment %}
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom" style="padding:20px">
           <h1 class="h2">Dashboard</h1>
         </div>
-        <div class="row">
+        <div class="row" style="padding:20px">
           <div class="col-md-4">
             <div class="card">
               <div class="card-body text-center">
@@ -157,7 +217,7 @@
         </div>
       </main>
     </div>
-  </div>
+  
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>

@@ -8,6 +8,8 @@ def dashboard(request):
     return render(request, 'admindash.html')
 
 def adminlogin(request):
+    if request.method == 'POST':
+        return redirect('dashboard')
     return render(request, 'adminlogin.html')
 
 def adminforgetpass(request):

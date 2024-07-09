@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-KxZyHJhp/PyYfzQzx9MC4YR1tuPsExq4OmVNc1b0fB6Rw3D8w3AbwCSk+8PjIVPH3b8JkIb/+9K1Z1jT5IlZIg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
+    {% load static %}
     <style>
         body {
             font-size: .875rem;
@@ -222,56 +222,81 @@
             object-fit: cover;
             border-radius: 50%;
             display: none;
-        }        
+        }   
+        .nav-link img {
+            width: 20px; /* Adjust the width as per your requirement */
+            height: 20px; /* Adjust the height as per your requirement */
+            border-radius: 50%; /* Keep the border radius if you want rounded images */
+            margin-right: 10px; /* Adjust the margin if needed */
+        }     
     </style>
 </head>
 <body>
     <div class="container-fluid">
         <div class="sidebar">
+            
             <div class="sidebar-sticky">
                 <div class="company-logo">
                     <div class="placeholder-logo" id="company-logo-placeholder">BF</div>
                     <span>Bluestock Fintech</span>
                 </div>
+               
+                <ul class="nav flex-column">
+                   
+                    <li class="nav-item">
+                        
+                        <a class="nav-link " href="#">
+                            <img src="{% static 'ipo/assets/img/food.png' %}"
+                            <span data-feather="home"></span>
+                            Food Order
+                        </a>
+                    </li>
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link active" href="#">
+                           <img src="{% static 'ipo/assets/img/managd.png' %}"
                             <span data-feather="home"></span>
                             Manage IPO
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
+                            <img src="{% static 'ipo/assets/img/iposub.png' %}"
                             <span data-feather="file"></span>
                             IPO Subscription
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
+                            <img src="{% static 'ipo/assets/img/ipoallot.png' %}"
                             <span data-feather="shopping-cart"></span>
                             IPO Allotment
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
+              <img src="{% static 'ipo/assets/img/setting.png' %}"
                             <span data-feather="users"></span>
                             Settings
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
+                            <img src="{% static 'ipo/assets/img/api manager.png' %}"
                             <span data-feather="bar-chart-2"></span>
                             API Manager
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
+                            <img src="{% static 'ipo/assets/img/accounts.png' %}"
                             <span data-feather="layers"></span>
                             Accounts
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
+                            <img src="{% static 'ipo/assets/img/help.png' %}"
                             <span data-feather="help-circle"></span>
                             Help
                         </a>

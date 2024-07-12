@@ -1,1 +1,854 @@
-<h1>Bluestock Home</h1>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    {% comment %} <link href="./style.css" rel="stylesheet" /> {% endcomment %}
+    <style>
+        {% include 'style.css' %}
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- navbar starts -->
+
+    <header class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid ms-3">
+        <a
+          class="navbar-brand d-flex gap-3 align-items-center justify-content-center"
+          href="#"
+        >
+          <img
+            src="{% static 'home/assets/logo_min.png' %}"
+            alt=""
+            width="50"
+            height="50"
+            class="d-inline-block align-text-top"
+          />
+          <h4 class="fw-bold mb-0">BLUESTOCK</h4>
+        </a>
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav fw-x fs-xs ms-4">
+            <a href="#" class="nav-item nav-link text-grey">Product</a>
+            <a href="#" class="nav-item nav-link text-grey">Pricing</a>
+            <a href="#" class="nav-item nav-link text-grey">Community</a>
+            <a href="#" class="nav-item nav-link text-grey">Media</a>
+            <a href="#" class="nav-item nav-link text-grey">Support</a>
+          </div>
+          <div class="navbar-nav ms-auto me-5 d-flex">
+            <a href="{% url 'login' %}" class="nav-item nav-link px-3 fs-6 mx-auto">Sign In</a>
+            <a
+              href="{% url 'signup' %}"
+              class="nav-item bg-primary nav-link px-3 fs-6 text-white mx-auto"
+              >Sign Up Now</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- navbar ends -->
+
+    <section class="my-2">
+      <!-- Breadcrumb starts -->
+      <nav aria-label="breadcrumb fs-xxs">
+        <ol class="breadcrumb breadcrumb-caret text-dark">
+          <li class="breadcrumb-item">
+            <a href="#" class="text-uppercase text-decoration-none"
+              >Bluestock</a
+            >
+          </li>
+          <li class="breadcrumb-item">
+            <a href="#" class="text-uppercase text-decoration-none">IPO</a>
+          </li>
+          <li
+            aria-current="page"
+            class="breadcrumb-item active text-uppercase text-decoration-none"
+          >
+            Upcoming IPO
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Breadcrumb ends -->
+
+      <!-- Upcoming IPO section starts -->
+      <div class="mt-4 mb-2">
+        <h1 class="fs-2">Upcoming IPO</h1>
+        <h6 class="fw-light fs-xs">
+          Companies that have filled for an IPO with SEBI. Few details might be
+          disclosed by the companies later.
+        </h6>
+      </div>
+
+      <!-- cards area starts -->
+      <div class="cards d-flex justify-content-between flex-wrap">
+        <div class="card mt-4 rounded-3 p-4 border-0">
+          <div class="card-heading d-flex gap-4 align-items-center">
+            <img src="{% static 'home/assets/nova.svg' %}" alt="nova" />
+            <h6 class="text-primary">Nova Agritech Ltd.</h6>
+          </div>
+
+          <div class="mt-5 d-flex justify-content-between gap-3 flex-wrap px-1">
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">PRICE BAND</h6>
+              <h4 class="fs-xs">Rs 39 - 41</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">OPEN</h6>
+              <h4 class="fs-xs">2024-01-22</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">CLOSE</h6>
+              <h4 class="fs-xs">2024-01-24</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">PRICE BAND</h6>
+              <h4 class="fs-xs">Rs 39 - 41</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">OPEN</h6>
+              <h4 class="fs-xs">2024-01-22</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">CLOSE</h6>
+              <h4 class="fs-xs">2024-01-24</h4>
+            </div>
+          </div>
+
+          <div class="d-flex gap-2 mt-3">
+            <button
+              class="btn btn-transparent rounded-4 px-4 border border-primary text-primary"
+              type="submit"
+            >
+              RHP
+            </button>
+            <button class="btn bg-red text-white rounded-4 px-4" type="submit">
+              DHRP
+            </button>
+          </div>
+        </div>
+
+        <div class="card mt-4 rounded-3 p-4 border-0">
+          <div class="card-heading d-flex gap-4 align-items-center">
+            <img src="{% static 'home/assets/nova.svg' %}" alt="nova" />
+            <h6 class="text-primary">Nova Agritech Ltd.</h6>
+          </div>
+
+          <div class="mt-5 d-flex justify-content-between gap-3 flex-wrap px-1">
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">PRICE BAND</h6>
+              <h4 class="fs-xs">Rs 39 - 41</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">OPEN</h6>
+              <h4 class="fs-xs">2024-01-22</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">CLOSE</h6>
+              <h4 class="fs-xs">2024-01-24</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">PRICE BAND</h6>
+              <h4 class="fs-xs">Rs 39 - 41</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">OPEN</h6>
+              <h4 class="fs-xs">2024-01-22</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">CLOSE</h6>
+              <h4 class="fs-xs">2024-01-24</h4>
+            </div>
+          </div>
+
+          <div class="d-flex gap-2 mt-3">
+            <button
+              class="btn btn-transparent rounded-4 px-4 border border-primary text-primary"
+              type="submit"
+            >
+              RHP
+            </button>
+            <button class="btn bg-red text-white rounded-4 px-4" type="submit">
+              DHRP
+            </button>
+          </div>
+        </div>
+
+        <div class="card mt-4 rounded-3 p-4 border-0">
+          <div class="card-heading d-flex gap-4 align-items-center">
+            <img src="{% static 'home/assets/nova.svg' %}" alt="nova" />
+            <h6 class="text-primary">Nova Agritech Ltd.</h6>
+          </div>
+
+          <div class="mt-5 d-flex justify-content-between gap-3 flex-wrap px-1">
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">PRICE BAND</h6>
+              <h4 class="fs-xs">Rs 39 - 41</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">OPEN</h6>
+              <h4 class="fs-xs">2024-01-22</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">CLOSE</h6>
+              <h4 class="fs-xs">2024-01-24</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">PRICE BAND</h6>
+              <h4 class="fs-xs">Rs 39 - 41</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">OPEN</h6>
+              <h4 class="fs-xs">2024-01-22</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">CLOSE</h6>
+              <h4 class="fs-xs">2024-01-24</h4>
+            </div>
+          </div>
+
+          <div class="d-flex gap-2 mt-3">
+            <button
+              class="btn btn-transparent rounded-4 px-4 border border-primary text-primary"
+              type="submit"
+            >
+              RHP
+            </button>
+            <button class="btn bg-red text-white rounded-4 px-4" type="submit">
+              DHRP
+            </button>
+          </div>
+        </div>
+
+        <div class="card mt-4 rounded-3 p-4 border-0">
+          <div class="card-heading d-flex gap-4 align-items-center">
+            <img src="{% static 'home/assets/nova.svg' %}" alt="nova" />
+            <h6 class="text-primary">Nova Agritech Ltd.</h6>
+          </div>
+
+          <div class="mt-5 d-flex justify-content-between gap-3 flex-wrap px-1">
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">PRICE BAND</h6>
+              <h4 class="fs-xs">Rs 39 - 41</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">OPEN</h6>
+              <h4 class="fs-xs">2024-01-22</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">CLOSE</h6>
+              <h4 class="fs-xs">2024-01-24</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">PRICE BAND</h6>
+              <h4 class="fs-xs">Rs 39 - 41</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">OPEN</h6>
+              <h4 class="fs-xs">2024-01-22</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">CLOSE</h6>
+              <h4 class="fs-xs">2024-01-24</h4>
+            </div>
+          </div>
+
+          <div class="d-flex gap-2 mt-3">
+            <button
+              class="btn btn-transparent rounded-4 px-4 border border-primary text-primary"
+              type="submit"
+            >
+              RHP
+            </button>
+            <button class="btn bg-red text-white rounded-4 px-4" type="submit">
+              DHRP
+            </button>
+          </div>
+        </div>
+
+        <div class="card mt-4 rounded-3 p-4 border-0">
+          <div class="card-heading d-flex gap-4 align-items-center">
+            <img src="{% static 'home/assets/nova.svg' %}" alt="nova" />
+            <h6 class="text-primary">Nova Agritech Ltd.</h6>
+          </div>
+
+          <div class="mt-5 d-flex justify-content-between gap-3 flex-wrap px-1">
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">PRICE BAND</h6>
+              <h4 class="fs-xs">Rs 39 - 41</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">OPEN</h6>
+              <h4 class="fs-xs">2024-01-22</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">CLOSE</h6>
+              <h4 class="fs-xs">2024-01-24</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">PRICE BAND</h6>
+              <h4 class="fs-xs">Rs 39 - 41</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">OPEN</h6>
+              <h4 class="fs-xs">2024-01-22</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">CLOSE</h6>
+              <h4 class="fs-xs">2024-01-24</h4>
+            </div>
+          </div>
+
+          <div class="d-flex gap-2 mt-3">
+            <button
+              class="btn btn-transparent rounded-4 px-4 border border-primary text-primary"
+              type="submit"
+            >
+              RHP
+            </button>
+            <button class="btn bg-red text-white rounded-4 px-4" type="submit">
+              DHRP
+            </button>
+          </div>
+        </div>
+
+        <div class="card mt-4 rounded-3 p-4 border-0">
+          <div class="card-heading d-flex gap-4 align-items-center">
+            <img src="{% static 'home/assets/nova.svg' %}" alt="nova" />
+            <h6 class="text-primary">Nova Agritech Ltd.</h6>
+          </div>
+
+          <div class="mt-5 d-flex justify-content-between gap-3 flex-wrap px-1">
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">PRICE BAND</h6>
+              <h4 class="fs-xs">Rs 39 - 41</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">OPEN</h6>
+              <h4 class="fs-xs">2024-01-22</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">CLOSE</h6>
+              <h4 class="fs-xs">2024-01-24</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">PRICE BAND</h6>
+              <h4 class="fs-xs">Rs 39 - 41</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">OPEN</h6>
+              <h4 class="fs-xs">2024-01-22</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">CLOSE</h6>
+              <h4 class="fs-xs">2024-01-24</h4>
+            </div>
+          </div>
+
+          <div class="d-flex gap-2 mt-3">
+            <button
+              class="btn btn-transparent rounded-4 px-4 border border-primary text-primary"
+              type="submit"
+            >
+              RHP
+            </button>
+            <button class="btn bg-red text-white rounded-4 px-4" type="submit">
+              DHRP
+            </button>
+          </div>
+        </div>
+
+        <div class="card mt-4 rounded-3 p-4 border-0">
+          <div class="card-heading d-flex gap-4 align-items-center">
+            <img src="{% static 'home/assets/nova.svg' %}" alt="nova" />
+            <h6 class="text-primary">Nova Agritech Ltd.</h6>
+          </div>
+
+          <div class="mt-5 d-flex justify-content-between gap-3 flex-wrap px-1">
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">PRICE BAND</h6>
+              <h4 class="fs-xs">Rs 39 - 41</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">OPEN</h6>
+              <h4 class="fs-xs">2024-01-22</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">CLOSE</h6>
+              <h4 class="fs-xs">2024-01-24</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">PRICE BAND</h6>
+              <h4 class="fs-xs">Rs 39 - 41</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">OPEN</h6>
+              <h4 class="fs-xs">2024-01-22</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">CLOSE</h6>
+              <h4 class="fs-xs">2024-01-24</h4>
+            </div>
+          </div>
+
+          <div class="d-flex gap-2 mt-3">
+            <button
+              class="btn btn-transparent rounded-4 px-4 border border-primary text-primary"
+              type="submit"
+            >
+              RHP
+            </button>
+            <button class="btn bg-red text-white rounded-4 px-4" type="submit">
+              DHRP
+            </button>
+          </div>
+        </div>
+
+        <div class="card mt-4 rounded-3 p-4 border-0">
+          <div class="card-heading d-flex gap-4 align-items-center">
+            <img src="{% static 'home/assets/nova.svg' %}" alt="nova" />
+            <h6 class="text-primary">Nova Agritech Ltd.</h6>
+          </div>
+
+          <div class="mt-5 d-flex justify-content-between gap-3 flex-wrap px-1">
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">PRICE BAND</h6>
+              <h4 class="fs-xs">Rs 39 - 41</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">OPEN</h6>
+              <h4 class="fs-xs">2024-01-22</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">CLOSE</h6>
+              <h4 class="fs-xs">2024-01-24</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">PRICE BAND</h6>
+              <h4 class="fs-xs">Rs 39 - 41</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">OPEN</h6>
+              <h4 class="fs-xs">2024-01-22</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">CLOSE</h6>
+              <h4 class="fs-xs">2024-01-24</h4>
+            </div>
+          </div>
+
+          <div class="d-flex gap-2 mt-3">
+            <button
+              class="btn btn-transparent rounded-4 px-4 border border-primary text-primary"
+              type="submit"
+            >
+              RHP
+            </button>
+            <button class="btn bg-red text-white rounded-4 px-4" type="submit">
+              DHRP
+            </button>
+          </div>
+        </div>
+
+        <div class="card mt-4 rounded-3 p-4 border-0">
+          <div class="card-heading d-flex gap-4 align-items-center">
+            <img src="{% static 'home/assets/nova.svg' %}" alt="nova" />
+            <h6 class="text-primary">Nova Agritech Ltd.</h6>
+          </div>
+
+          <div class="mt-5 d-flex justify-content-between gap-3 flex-wrap px-1">
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">PRICE BAND</h6>
+              <h4 class="fs-xs">Rs 39 - 41</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">OPEN</h6>
+              <h4 class="fs-xs">2024-01-22</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">CLOSE</h6>
+              <h4 class="fs-xs">2024-01-24</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">PRICE BAND</h6>
+              <h4 class="fs-xs">Rs 39 - 41</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">OPEN</h6>
+              <h4 class="fs-xs">2024-01-22</h4>
+            </div>
+            <div class="flex">
+              <h6 class="fw-normal text-grey fs-6">CLOSE</h6>
+              <h4 class="fs-xs">2024-01-24</h4>
+            </div>
+          </div>
+
+          <div class="d-flex gap-2 mt-3">
+            <button
+              class="btn btn-transparent rounded-4 px-4 border border-primary text-primary"
+              type="submit"
+            >
+              RHP
+            </button>
+            <button class="btn bg-red text-white rounded-4 px-4" type="submit">
+              DHRP
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- cards area ends -->
+      <!-- Upcoming IPO section ends -->
+
+      <!--FAQ Section starts-->
+      <div class="my-5">
+        <h1 class="fs-2">Frequently Asked Questions</h1>
+        <h6 class="fw-light fs-xs">
+          Find answers to common questions that come in your mind related to
+          IPO.
+        </h6>
+      </div>
+
+      <div class="accordion mt-4">
+        <div class="accordion-item bg-white mt-3 px-3 pt-2 pb-4 px-2 border-0">
+          <h2 class="accordion-header" id="headingOne">
+            <button
+              class="accordion-button faq-button fw-x"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              How to Subscribe to an IPO?
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse show"
+            aria-labelledby="headingOne"
+          >
+            <div class="accordion-body fw-normal">
+              Step 1: Login to your respective service provider. <br />
+              Step 2: Click on the IPO button. <br />
+              Step 3: Select the IPO you want to bid and enter the relevant
+              details. <br />
+              Step4: Your subscription will be completed once you make the
+              payment or give permission.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item bg-white mt-3 px-3 pt-2 pb-4 border-0">
+          <h2 class="accordion-header" id="headingTwo">
+            <button
+              class="accordion-button collapsed faq-button fw-x"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              Should I buy an IPO first day?
+            </button>
+          </h2>
+          <div
+            id="collapseTwo"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingTwo"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <strong>This is the second item's accordion body.</strong> It is
+              hidden by default, until the collapse plugin adds the appropriate
+              classes that we use to style each element. These classes control
+              the overall appearance, as well as the showing and hiding via CSS
+              transitions. You can modify any of this with custom CSS or
+              overriding our default variables. It's also worth noting that just
+              about any HTML can go within the <code>.accordion-body</code>,
+              though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item bg-white mt-3 px-3 pt-2 pb-4 border-0">
+          <h2 class="accordion-header" id="headingThree">
+            <button
+              class="accordion-button collapsed faq-button fw-x"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseThree"
+              aria-expanded="false"
+              aria-controls="collapseThree"
+            >
+              How do you know if an IPO is good?
+            </button>
+          </h2>
+          <div
+            id="collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingThree"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <strong>This is the second item's accordion body.</strong> It is
+              hidden by default, until the collapse plugin adds the appropriate
+              classes that we use to style each element. These classes control
+              the overall appearance, as well as the showing and hiding via CSS
+              transitions. You can modify any of this with custom CSS or
+              overriding our default variables. It's also worth noting that just
+              about any HTML can go within the <code>.accordion-body</code>,
+              though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item bg-white mt-3 px-3 pt-2 pb-4 border-0">
+          <h2 class="accordion-header" id="headingFour">
+            <button
+              class="accordion-button collapsed faq-button fw-x"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseFour"
+              aria-expanded="false"
+              aria-controls="collapseFour"
+            >
+              How to check IPO start date?
+            </button>
+          </h2>
+          <div
+            id="collapseFour"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingTwo"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <strong>This is the second item's accordion body.</strong> It is
+              hidden by default, until the collapse plugin adds the appropriate
+              classes that we use to style each element. These classes control
+              the overall appearance, as well as the showing and hiding via CSS
+              transitions. You can modify any of this with custom CSS or
+              overriding our default variables. It's also worth noting that just
+              about any HTML can go within the <code>.accordion-body</code>,
+              though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item bg-white mt-3 px-3 pt-2 pb-4 border-0">
+          <h2 class="accordion-header" id="headingFive">
+            <button
+              class="accordion-button collapsed faq-button fw-x"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseFive"
+              aria-expanded="false"
+              aria-controls="collapseFive"
+            >
+              What is issue size?
+            </button>
+          </h2>
+          <div
+            id="collapseFive"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingFive"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <strong>This is the second item's accordion body.</strong> It is
+              hidden by default, until the collapse plugin adds the appropriate
+              classes that we use to style each element. These classes control
+              the overall appearance, as well as the showing and hiding via CSS
+              transitions. You can modify any of this with custom CSS or
+              overriding our default variables. It's also worth noting that just
+              about any HTML can go within the <code>.accordion-body</code>,
+              though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item bg-white mt-3 px-3 pt-2 pb-4 border-0">
+          <h2 class="accordion-header" id="headingSix">
+            <button
+              class="accordion-button collapsed faq-button fw-x"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseSix"
+              aria-expanded="false"
+              aria-controls="collapseSix"
+            >
+              How many shares in a lot?
+            </button>
+          </h2>
+          <div
+            id="collapseSix"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingSix"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <strong>This is the second item's accordion body.</strong> It is
+              hidden by default, until the collapse plugin adds the appropriate
+              classes that we use to style each element. These classes control
+              the overall appearance, as well as the showing and hiding via CSS
+              transitions. You can modify any of this with custom CSS or
+              overriding our default variables. It's also worth noting that just
+              about any HTML can go within the <code>.accordion-body</code>,
+              though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item bg-white mt-3 px-3 pt-2 pb-4 border-0">
+          <h2 class="accordion-header" id="headingSeven">
+            <button
+              class="accordion-button collapsed faq-button fw-x"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseSeven"
+              aria-expanded="false"
+              aria-controls="collapseSeven"
+            >
+              How is the lot size calculated?
+            </button>
+          </h2>
+          <div
+            id="collapseSeven"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingSeven"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <strong>This is the second item's accordion body.</strong> It is
+              hidden by default, until the collapse plugin adds the appropriate
+              classes that we use to style each element. These classes control
+              the overall appearance, as well as the showing and hiding via CSS
+              transitions. You can modify any of this with custom CSS or
+              overriding our default variables. It's also worth noting that just
+              about any HTML can go within the <code>.accordion-body</code>,
+              though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item bg-white mt-3 px-3 pt-2 pb-4 border-0">
+          <h2 class="accordion-header" id="headingEight">
+            <button
+              class="accordion-button collapsed faq-button fw-x"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseEight"
+              aria-expanded="false"
+              aria-controls="collapseEight"
+            >
+              Who decides the IPO price band?
+            </button>
+          </h2>
+          <div
+            id="collapseEight"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingEight"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <strong>This is the second item's accordion body.</strong> It is
+              hidden by default, until the collapse plugin adds the appropriate
+              classes that we use to style each element. These classes control
+              the overall appearance, as well as the showing and hiding via CSS
+              transitions. You can modify any of this with custom CSS or
+              overriding our default variables. It's also worth noting that just
+              about any HTML can go within the <code>.accordion-body</code>,
+              though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item bg-white mt-3 px-3 pt-2 pb-4 border-0">
+          <h2 class="accordion-header" id="headingNine">
+            <button
+              class="accordion-button collapsed faq-button fw-x"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseNine"
+              aria-expanded="false"
+              aria-controls="collapseNine"
+            >
+              What is IPO GMP?
+            </button>
+          </h2>
+          <div
+            id="collapseNine"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingNine"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <strong>This is the second item's accordion body.</strong> It is
+              hidden by default, until the collapse plugin adds the appropriate
+              classes that we use to style each element. These classes control
+              the overall appearance, as well as the showing and hiding via CSS
+              transitions. You can modify any of this with custom CSS or
+              overriding our default variables. It's also worth noting that just
+              about any HTML can go within the <code>.accordion-body</code>,
+              though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item bg-white mt-3 px-3 pt-2 pb-4 border-0">
+          <h2 class="accordion-header" id="headingTen">
+            <button
+              class="accordion-button collapsed faq-button fw-x"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTen"
+              aria-expanded="false"
+              aria-controls="collapseTen"
+            >
+              How many lots should I apply for IPO?
+            </button>
+          </h2>
+          <div
+            id="collapseTen"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingTen"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <strong>This is the second item's accordion body.</strong> It is
+              hidden by default, until the collapse plugin adds the appropriate
+              classes that we use to style each element. These classes control
+              the overall appearance, as well as the showing and hiding via CSS
+              transitions. You can modify any of this with custom CSS or
+              overriding our default variables. It's also worth noting that just
+              about any HTML can go within the <code>.accordion-body</code>,
+              though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

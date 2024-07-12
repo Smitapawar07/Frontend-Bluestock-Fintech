@@ -964,8 +964,10 @@
                             <p>Manage your IPO Details</p>
                         </div>
                         <div>
+                            {% comment %} <button class="btn btn-primary">Register</button>
+                            <button class="btn btn-secondary">Cancel</button> {% endcomment %}
                             <button class="btn btn-primary">Register</button>
-                            <button class="btn btn-secondary">Cancel</button>
+                    <button onclick="window.location.href='{% url 'upcomingipo' %}'" class="btn btn-secondary">Cancel</button>
                         </div>
                     </div>
                     <div class="form-container">

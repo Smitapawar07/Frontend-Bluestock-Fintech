@@ -3,8 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upcomming IPO Information</title>
+    <title>IPO Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Example: Bootstrap Icons CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-KxZyHJhp/PyYfzQzx9MC4YR1tuPsExq4OmVNc1b0fB6Rw3D8w3AbwCSk+8PjIVPH3b8JkIb/+9K1Z1jT5IlZIg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    {% load static %}
     <style>
+        body {
+            font-size: .875rem;
+            background-color: #f8f9fa;
+        }
+
+        .container-fluid {
+            display: flex;
+            padding: 0; /* Remove padding */
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #ffffff;
+            padding-top: 15px;
+            height: 100vh;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .sidebar-sticky {
+            position: sticky;
+            top: 0;
+            height: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: #333;
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+        }
+
+        .nav-link .feather {
+            margin-right: 10px;
+            color: #999;
+        }
+
+        .nav-link.active {
+            background-color: #eef2f7;
+            border-radius: 4px;
+        }
+
+        .nav-link:hover .feather,
+        .nav-link.active .feather {
+            color: inherit;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .table-responsive {
+            margin-top: 20px;
+        }
+
+        .pagination {
+            margin-top: 20px;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: #5A67BA;
+        }
+
+        .main-content {
+            flex-grow: 1;
+        }
+
+        .company-logo {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+        }
+
+        .company-logo img,
+        .company-logo .placeholder-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .company-logo .placeholder-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #5A67BA;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .company-logo span {
+            font-weight: bold;
+            color: #5A67BA;
+            font-size: 1.2rem;
+        }
+
+        .badge-ongoing {
+            background-color: #28a745;
+        }
+
+        .badge-coming {
+            background-color: #ffc107;
+        }
+
+        .badge-new-listed {
+            background-color: #dc3545;
+        }
+
+        .btn-update {
+            background-color: #5A67BA;
+            color: white;
+        }
+
+        @media (max-width: 767.98px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+        }
+
+        .navbar .dropdown-menu {
+            right: 0;
+            left: auto;
+        }
+
+        .navbar .nav-item .nav-link {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .nav-item .nav-link img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .navbar .nav-item .nav-link .username {
+            margin-right: 5px;
+        }
+
+        .navbar .nav-item .dropdown-menu .dropdown-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .nav-item .dropdown-menu .dropdown-item img {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .navbar .nav-item .dropdown-menu .dropdown-item span {
+            flex-grow: 1;
+        }
+
+        .custom-input-group {
+            border: 1px solid #ced4da; /* Common border color */
+            border-radius: 4px; /* Optional: Rounded corners */
+            overflow: hidden; /* Ensure contents stay within border */
+        }
+        .custom-input-group .form-control {
+            border: none; /* Remove default input border */
+            border-radius: 0; /* Optional: Ensure no radius conflicts */
+        }
+        .custom-input-group .btn {
+            background-color: white; /* Button background color */
+            border: none; /* Remove default button border */
+        }
+        .custom-input-group .btn i {
+            color: black; /* Icon color */
+        }
+
+        .user-profile {
+            width: 30px;
+            height: 30px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .user-profile .placeholder-profile {
+            width: 100%;
+            height: 100%;
+            background-color: #5A67BA;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .user-profile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            display: none;
+        }   
+        .nav-link img {
+            width: 20px; /* Adjust the width as per your requirement */
+            height: 20px; /* Adjust the height as per your requirement */
+            border-radius: 50%; /* Keep the border radius if you want rounded images */
+            margin-right: 10px; /* Adjust the margin if needed */
+        }   
         body, html {
             margin: 0;
             padding: 0;
@@ -59,14 +283,16 @@
             border: none;
             cursor: pointer;
             font-size: 14px;
+            
         }
         .btn-primary {
             background-color: #4285f4;
             color: white;
         }
         .btn-secondary {
-            background-color: white;
-            border: 1px solid #ccc;
+            
+            background-color: #e7e7e7;
+            color: black;
         }
         .form-container {
             background-color: white;
@@ -128,7 +354,8 @@
             font-size: 14px;
             margin-top: 30px;
             margin-bottom: 20px;
-        }
+        }  
+        
     </style>
 </head>
 <body>
@@ -151,7 +378,7 @@
                 </div>
                 <div>
                     <button class="btn btn-primary">Register</button>
-                    <button onclick="window.location.href='{% url 'upcomingipo' %}'" class="btn btn-secondary">Cancel</button>
+                    <button class="btn btn-secondary">Cancel</button>
                 </div>
             </div>
             <div class="form-container">

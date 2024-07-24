@@ -1,35 +1,56 @@
-{% load static %}
+<!-- {% load static %} -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IPO Dashboard</title>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-KxZyHJhp/PyYfzQzx9MC4YR1tuPsExq4OmVNc1b0fB6Rw3D8w3AbwCSk+8PjIVPH3b8JkIb/+9K1Z1jT5IlZIg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    {% include 'styles.css' %}
-    .circle {
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IPO Dashboard</title>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-KxZyHJhp/PyYfzQzx9MC4YR1tuPsExq4OmVNc1b0fB6Rw3D8w3AbwCSk+8PjIVPH3b8JkIb/+9K1Z1jT5IlZIg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      /* {% include 'styles.css' %} */
+      .nav-link {
+        text-decoration: none;
+        color: #273240;
+      }
+      .circle {
         border-radius: 50%;
         text-align: center;
-        line-height: 80px;
+        line-height: 40px;
         color: white;
-        font-size: 20px;
-        display: inline-block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
       }
       .circle-small {
-        width: 80px;
-        height: 80px;
+        width: 110px;
+        height: 110px;
       }
       .circle-medium {
-        width: 100px;
-        height: 100px;
+        width: 130px;
+        height: 130px;
       }
       .circle-large {
-        width: 120px;
-        height: 120px;
+        width: 150px;
+        height: 150px;
       }
       .bg-orange {
         background-color: #ff9900;
@@ -40,12 +61,13 @@
       .bg-purple {
         background-color: #9900cc;
       }
-      .sidebar-sticky {
-        position: -webkit-sticky;
-        position: sticky;
-        top: 0;
+
+      .bg-grey {
+        background-color: rgb(225, 223, 223);
+      }
+      .sidebar {
         height: calc(100vh - 48px);
-        padding-top: 0.5rem;
+        width: 20%;
         overflow-x: hidden;
         overflow-y: auto;
       }
@@ -53,196 +75,278 @@
         width: 100%;
         height: auto;
       }
-    
-  </style>
-</head>
-<body>
-
-  <div class="container-fluid">
-    <div class="sidebar">
-        
-        <div class="sidebar-sticky">
-            <div class="company-logo">
-                <div class="placeholder-logo" id="company-logo-placeholder">BF</div>
-                <span>Bluestock Fintech</span>
-            </div>
-           
-            <ul class="nav flex-column">
-               
-                <li class="nav-item">
-                    
-                    <a class="nav-link " href="#">
-                        <img src="{% static 'ipo/assets/img/food.png' %}">
-                        <span data-feather="home"></span>
-                        Food Order
-                    </a>
-                </li>
-            <ul class="nav flex-column">
-                <li class="nav-item">
-                    <a class="nav-link active" href="{% url 'upcomingipo' %}">
-                       <img src="{% static 'ipo/assets/img/managd.png' %}">
-                        <span data-feather="home"></span>
-                        Manage IPO
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <img src="{% static 'ipo/assets/img/iposub.png' %}">
-                        <span data-feather="file"></span>
-                        IPO Subscription
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <img src="{% static 'ipo/assets/img/ipoallot.png' %}">
-                        <span data-feather="shopping-cart"></span>
-                        IPO Allotment
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <img src="{% static 'ipo/assets/img/setting.png' %}">
-                        <span data-feather="users"></span>
-                        Settings
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <img src="{% static 'ipo/assets/img/api manager.png' %}">
-                        <span data-feather="bar-chart-2"></span>
-                        API Manager
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <img src="{% static 'ipo/assets/img/accounts.png' %}">
-                        <span data-feather="layers"></span>
-                        Accounts
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <img src="{% static 'ipo/assets/img/help.png' %}">
-                        <span data-feather="help-circle"></span>
-                        Help
-                    </a>
-                </li>
-            </ul>
+      .right {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid d-flex flex-row">
+      <div class="sidebar px-4 pt-3">
+        <div class="company-logo d-flex flex-row gap-3">
+          <div class="placeholder-logo" id="company-logo-placeholder">BF</div>
+          <span class="fw-bold">Bluestock Fintech</span>
         </div>
-    </div>
 
-      <main role="main" class="main-content">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white" style="padding-left: 20px; padding-right: 20px;">
+        <!-- <ul class="nav flex-column"> -->
+
+        <ul class="nav flex-column mt-5">
+          <h6 class="ml-3">Menu</h6>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <!-- <img src="{% static 'ipo/assets/img/food.png' %}" /> -->
+              <span data-feather="home" class="fw-normal"></span>
+              DashBoard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'upcomingipo' %}">
+              <!-- <img src="{% static 'ipo/assets/img/managd.png' %}" /> -->
+              <span data-feather="home" class="fw-normal"></span>
+              Manage IPO
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <!-- <img src="{% static 'ipo/assets/img/iposub.png' %}" /> -->
+              <span data-feather="file" class="fw-normal"></span>
+              IPO Subscription
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <!-- <img src="{% static 'ipo/assets/img/ipoallot.png' %}" /> -->
+              <span data-feather="shopping-cart" class="fw-normal"></span>
+              IPO Allotment
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <!-- <img src="{% static 'ipo/assets/img/setting.png' %}" /> -->
+              <span data-feather="users" class="fw-normal"></span>
+              Settings
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <!-- <img src="{% static 'ipo/assets/img/api manager.png' %}" /> -->
+              <span data-feather="bar-chart-2" class="fw-normal"></span>
+              API Manager
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <!-- <img src="{% static 'ipo/assets/img/accounts.png' %}" /> -->
+              <span data-feather="layers" class="fw-normal"></span>
+              Accounts
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <!-- <img src="{% static 'ipo/assets/img/help.png' %}" /> -->
+              <span data-feather="help-circle" class="fw-normal"></span>
+              Help
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="right">
+        <main role="main" class="main-content">
+          <nav
+            class="navbar navbar-expand-lg navbar-light bg-white"
+            style="padding-left: 20px; padding-right: 20px"
+          >
             <div class="container-fluid">
-                <form class="d-flex">
-                    <div class="input-group custom-input-group" style="width:600px; padding-left:20px;">
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn" type="submit"><i class="bi bi-search"></i></button>
-                    </div>
-                </form>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                {% comment %} <img src="user-profile.jpg" alt="User Profile"> {% endcomment %}
-                                <div class="user-profile">
-                                    <div id="user-profile-placeholder" class="placeholder-profile">JD</div>
-                                </div>                                    
-                                <span class="username">Hi, Vishal</span>
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Profile</a></li>
-                                <li><a class="dropdown-item" href="#">Settings</a></li>
-                                <li><a class="dropdown-item" href="#">Logout</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="bi bi-bell"></i>
-                            </a>
-                        </li>
-                    </ul>
+              <form class="d-flex rounded-3">
+                <div
+                  class="input-group custom-input-group bg-grey"
+                  style="width: 600px; padding-left: 20px"
+                >
+                  <input
+                    class="form-control bg-transparent"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                  <button class="btn" type="submit">
+                    <i class="bi bi-search"></i>
+                  </button>
                 </div>
-            </div>
-        </nav>
+              </form>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle d-flex gap-2 align-items-center"
+                      href="#"
+                      id="navbarDropdown"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <!-- {% comment %} -->
+                      <img
+                        src="/ipo/static/ipo/assets/img/accounts.png"
+                        alt="User"
+                        class="rounded-circle"
+                        width="25"
+                        height="25"
+                      />
 
-        {% comment %} <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4"> {% endcomment %}
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom" style="padding:20px">
-          <h1 class="h2">Dashboard</h1>
-        </div>
-        <div class="row" style="padding:20px">
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-body text-center">
-                <div class="circle circle-large bg-orange">
-                  30<br>Total IPO
-                </div>
-                <div class="circle circle-medium bg-purple mt-3">
-                  9<br>IPO in Loss
-                </div>
-                <div class="circle circle-small bg-blue mt-3">
-                  20<br>IPO in Gain
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Quick Links</h5>
-                <ul class="list-unstyled">
-                  <li><a href="#"><img src="ipo/static/market_stat.png" alt="NSE India" style="width: 20px; height: 20px;"> NSE India</a></li>
-                  <li><a href="#"><img src="ipo/static/market_stat.png" alt="BSE India" style="width: 20px; height: 20px;"> BSE India</a></li>
-                  <li><a href="#"><img src="ipo/static/market_stat.png" alt="SEBI" style="width: 20px; height: 20px;"> SEBI</a></li>
-                  <li><a href="#"><img src="ipo/static/market_stat.png" alt="Money Control" style="width: 20px; height: 20px;"> Money Control</a></li>
+                      <div class="user-profile"></div>
+                      <span class="username">Hi, Vishal</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Profile</a></li>
+                      <li><a class="dropdown-item" href="#">Settings</a></li>
+                      <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <i class="bi bi-bell"></i>
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>
+          </nav>
+        </main>
+
+        <!-- {% comment %} -->
+        <main role="main" class="px-4">
+          <!-- {% endcomment %} -->
+          <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+            style="padding: 20px"
+          >
+            <h1 class="h2">Dashboard</h1>
           </div>
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-body text-center">
-                <h5 class="card-title">Main Board IPO</h5>
-                <p>From 01 Jan 2024</p>
-                <div class="doughnut-chart">
-                  <!-- Placeholder for the chart -->
+          <div class="row" style="padding: 20px">
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body text-center">
+                  <div class="circle circle-large bg-orange align-items-center">
+                    <h4 class="fs-3">30</h4>
+                    <h6 class="fs-4">Total IPO</h6>
+                  </div>
+                  <div
+                    class="circle circle-medium bg-purple align-items-center"
+                  >
+                    <h4 class="fs-4">9</h4>
+                    <h6 class="fs-5">IPO in Loss</h6>
+                  </div>
+                  <div class="circle circle-small bg-blue align-items-center">
+                    <h4 class="fs-5">20</h4>
+                    <h6 class="fs-6">IPO in Gain</h6>
+                  </div>
                 </div>
-                <button class="btn btn-primary mt-3">View Report</button>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Quick Links</h5>
+                  <ul class="list-unstyled">
+                    <li>
+                      <a href="#"
+                        ><img
+                          src="ipo/static/market_stat.png"
+                          alt="NSE India"
+                          style="width: 20px; height: 20px"
+                        />
+                        NSE India</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><img
+                          src="ipo/static/market_stat.png"
+                          alt="BSE India"
+                          style="width: 20px; height: 20px"
+                        />
+                        BSE India</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><img
+                          src="ipo/static/market_stat.png"
+                          alt="SEBI"
+                          style="width: 20px; height: 20px"
+                        />
+                        SEBI</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><img
+                          src="ipo/static/market_stat.png"
+                          alt="Money Control"
+                          style="width: 20px; height: 20px"
+                        />
+                        Money Control</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Main Board IPO</h5>
+                  <p>From 01 Jan 2024</p>
+                  <div class="doughnut-chart">
+                    <!-- Placeholder for the chart -->
+                  </div>
+                  <button class="btn btn-primary mt-3">View Report</button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </main>
+        </main>
+      </div>
     </div>
-  
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      var ctx = document.createElement('canvas');
-      $('.doughnut-chart').append(ctx);
-      var myDoughnutChart = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-          labels: ['Upcoming', 'New Listed', 'Ongoing'],
-          datasets: [{
-            data: [15, 25, 2],
-            backgroundColor: ['#6666ff', '#3399ff', '#cc66ff']
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          cutoutPercentage: 60
-        }
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        var ctx = document.createElement("canvas");
+        $(".doughnut-chart").append(ctx);
+        var myDoughnutChart = new Chart(ctx, {
+          type: "doughnut",
+          data: {
+            labels: ["Upcoming", "New Listed", "Ongoing"],
+            datasets: [
+              {
+                data: [15, 25, 2],
+                backgroundColor: ["#6666ff", "#3399ff", "#cc66ff"],
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutoutPercentage: 60,
+          },
+        });
       });
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>

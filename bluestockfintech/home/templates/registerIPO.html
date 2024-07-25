@@ -485,6 +485,10 @@
 
     {% load static %}
     <style>
+        {% include 'styles.css' %}     
+    </style>
+    <style>
+        {% comment %}  
         body {
             font-size: .875rem;
             background-color: #f8f9fa;
@@ -533,7 +537,7 @@
         .nav-link.active .feather {
             color: inherit;
         }
-
+        
         h1 {
             font-size: 1.5rem;
             color: #333;
@@ -551,7 +555,7 @@
             font-weight: bold;
             color: #5A67BA;
         }
-
+        {% endcomment %}
         .main-content {
             flex-grow: 1;
         }
@@ -615,6 +619,8 @@
             }
         }
 
+
+        {% comment %}
         .navbar .dropdown-menu {
             right: 0;
             left: auto;
@@ -702,7 +708,7 @@
             height: 20px; /* Adjust the height as per your requirement */
             border-radius: 50%; /* Keep the border radius if you want rounded images */
             margin-right: 10px; /* Adjust the margin if needed */
-        }   
+        } 
         body, html {
             margin: 0;
             padding: 0;
@@ -717,6 +723,9 @@
             width: 200px;
             margin-right: 20px;
         }
+        {% endcomment %}
+
+        
         .tab {
             padding: 10px;
             margin-bottom: 5px;
@@ -741,6 +750,7 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
+            padding-top: 20px;
         }
         .header h1 {
             font-size: 24px;
@@ -876,7 +886,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
-              <img src="{% static 'ipo/assets/img/setting.png' %}">
+                            <img src="{% static 'ipo/assets/img/setting.png' %}">
                             <span data-feather="users"></span>
                             Settings
                         </a>
@@ -897,7 +907,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
-                            <img src="{% static 'ipo/assets/img/help.png' %}"
+                            <img src="{% static 'ipo/assets/img/help.png' %}">
                             <span data-feather="help-circle"></span>
                             Help
                         </a>
@@ -947,7 +957,7 @@
 
 
             <div class="container">
-                <div class="sidebar">
+                {% comment %} <div class="sidebar">
                     <div class="tab active">
                         <span class="tab-icon">○</span>
                         IPO Information
@@ -956,7 +966,7 @@
                         <span class="tab-icon">⊞</span>
                         IPO Info
                     </div>
-                </div>
+                </div> {% endcomment %}
                 <div class="main-content">
                     <div class="header">
                         <div>

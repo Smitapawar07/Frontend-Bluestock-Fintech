@@ -25,10 +25,26 @@
       referrerpolicy="no-referrer"
     />
     <style>
-      /* {% include 'styles.css' %} */
+      {% include 'styles.css' %}
+
+      .sidebar {
+        height: 100vh !important;
+      }
+
       .nav-link {
         text-decoration: none;
         color: #273240;
+        padding: 10px;
+        border-radius: 7px;
+      }
+
+      .nav-link:hover {
+        background-color: rgb(244, 240, 240);
+      }
+
+      .nav-link img {
+        width: 20px;
+        height: 20px;
       }
       .circle {
         border-radius: 50%;
@@ -41,16 +57,25 @@
         flex-direction: column;
       }
       .circle-small {
-        width: 110px;
-        height: 110px;
+        width: 120px;
+        height: 120px;
+        left: 10%;
+        bottom: 30px;
       }
       .circle-medium {
-        width: 130px;
-        height: 130px;
+        width: 110px;
+        height: 110px;
+        left: 20%;
+        top: 10px;
       }
       .circle-large {
         width: 150px;
         height: 150px;
+        top: 60px;
+        left: 40%;
+      }
+      .circle-content {
+        font-size: small;
       }
       .bg-orange {
         background-color: #ff9900;
@@ -64,6 +89,10 @@
 
       .bg-grey {
         background-color: rgb(225, 223, 223);
+      }
+
+      .bg-sky {
+        background-color: #f1f2f7;
       }
       .sidebar {
         height: calc(100vh - 48px);
@@ -81,8 +110,8 @@
     </style>
   </head>
   <body>
-    <div class="container-fluid d-flex flex-row">
-      <div class="sidebar px-4 pt-3">
+    <div class="container-fluid d-flex flex-row m-0 p-0">
+      <div class="sidebar px-4 pt-3 bg-sky">
         <div class="company-logo d-flex flex-row gap-3">
           <div class="placeholder-logo" id="company-logo-placeholder">BF</div>
           <span class="fw-bold">Bluestock Fintech</span>
@@ -91,59 +120,64 @@
         <!-- <ul class="nav flex-column"> -->
 
         <ul class="nav flex-column mt-5">
-          <h6 class="ml-3">Menu</h6>
+          <h6 class="ml-3">MENU</h6>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <!-- <img src="{% static 'ipo/assets/img/food.png' %}" /> -->
+            <a class="nav-link d-flex align-items-center gap-1" href="#">
+              <img src="/ipo/static/ipo/assets/img/managd.png" alt="" />
               <span data-feather="home" class="fw-normal"></span>
               DashBoard
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="{% url 'upcomingipo' %}">
-              <!-- <img src="{% static 'ipo/assets/img/managd.png' %}" /> -->
+            <a
+              class="nav-link d-flex align-items-center gap-1"
+              href="{% url 'upcomingipo' %}"
+            >
+              <img src="/ipo/static/ipo/assets/img/food.png" alt="" />
               <span data-feather="home" class="fw-normal"></span>
               Manage IPO
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <!-- <img src="{% static 'ipo/assets/img/iposub.png' %}" /> -->
+            <a class="nav-link d-flex align-items-center gap-1" href="#">
+              <img src="/ipo/static/ipo/assets/img/iposub.png" alt="" />
               <span data-feather="file" class="fw-normal"></span>
               IPO Subscription
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <!-- <img src="{% static 'ipo/assets/img/ipoallot.png' %}" /> -->
+            <a class="nav-link d-flex align-items-center gap-1" href="#">
+              <img src="/ipo/static/ipo/assets/img/ipoallot.png" alt="" />
               <span data-feather="shopping-cart" class="fw-normal"></span>
               IPO Allotment
             </a>
           </li>
+          <h6 class="my-3 ml-3">OTHERS</h6>
+
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <!-- <img src="{% static 'ipo/assets/img/setting.png' %}" /> -->
+            <a class="nav-link d-flex align-items-center gap-1" href="#">
+              <img src="/ipo/static/ipo/assets/img/setting.png" alt="" />
               <span data-feather="users" class="fw-normal"></span>
               Settings
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <!-- <img src="{% static 'ipo/assets/img/api manager.png' %}" /> -->
+            <a class="nav-link d-flex align-items-center gap-1" href="#">
+              <img src="/ipo/static/ipo/assets/img/api manager.png" alt="" />
               <span data-feather="bar-chart-2" class="fw-normal"></span>
               API Manager
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <!-- <img src="{% static 'ipo/assets/img/accounts.png' %}" /> -->
+            <a class="nav-link d-flex align-items-center gap-1" href="#">
+              <img src="/ipo/static/ipo/assets/img/accounts.png" alt="" />
               <span data-feather="layers" class="fw-normal"></span>
               Accounts
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <!-- <img src="{% static 'ipo/assets/img/help.png' %}" /> -->
+            <a class="nav-link d-flex align-items-center gap-1" href="#">
+              <img src="/ipo/static/ipo/assets/img/help.png" alt="" />
               <span data-feather="help-circle" class="fw-normal"></span>
               Help
             </a>
@@ -182,7 +216,7 @@
                 aria-controls="navbarNav"
                 aria-expanded="false"
                 aria-label="Toggle navigation"
-              >
+                >
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
@@ -196,7 +230,7 @@
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
                     >
-                      <!-- {% comment %} -->
+                  
                       <img
                         src="/ipo/static/ipo/assets/img/accounts.png"
                         alt="User"
@@ -225,9 +259,9 @@
           </nav>
         </main>
 
-        <!-- {% comment %} -->
+
         <main role="main" class="px-4">
-          <!-- {% endcomment %} -->
+   
           <div
             class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
             style="padding: 20px"
@@ -236,21 +270,52 @@
           </div>
           <div class="row" style="padding: 20px">
             <div class="col-md-4">
-              <div class="card">
-                <div class="card-body text-center">
-                  <div class="circle circle-large bg-orange align-items-center">
+              <div class="card" style="padding: 20px">
+                <h5
+                  class="card-title"
+                  style="font-size: 18px; margin-bottom: 20px; font-weight: 600"
+                >
+                  IPO Dashboard India
+                </h5>
+                <p class="d-flex justify-content-start align-items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 64 64"
+                    id="UpArrow"
+                    style="width: 20px; height: 18px"
+                  >
+                    <path
+                      fill="none"
+                      stroke="#0e862c"
+                      stroke-miterlimit="10"
+                      stroke-width="6"
+                      d="M16 19q8-8 16-16L48 19M32 3V64"
+                      class="colorStroke020202 svgStroke"
+                    ></path>
+                  </svg>
+                  20 IPO in Gain
+                </p>
+                <div
+                  class="card-body text-center position-relative"
+                  style="width: 100%; height: 40vh"
+                >
+                  <div
+                    class="circle circle-large bg-orange align-items-center position-absolute"
+                  >
                     <h4 class="fs-3">30</h4>
-                    <h6 class="fs-4">Total IPO</h6>
+                    <h6 class="circle-content">Total IPO</h6>
                   </div>
                   <div
-                    class="circle circle-medium bg-purple align-items-center"
+                    class="circle circle-medium bg-purple align-items-center position-absolute"
                   >
                     <h4 class="fs-4">9</h4>
-                    <h6 class="fs-5">IPO in Loss</h6>
+                    <h6 class="circle-content">IPO in Loss</h6>
                   </div>
-                  <div class="circle circle-small bg-blue align-items-center">
+                  <div
+                    class="circle circle-small bg-blue align-items-center position-absolute"
+                  >
                     <h4 class="fs-5">20</h4>
-                    <h6 class="fs-6">IPO in Gain</h6>
+                    <h6 class="circle-content">IPO in Gain</h6>
                   </div>
                 </div>
               </div>

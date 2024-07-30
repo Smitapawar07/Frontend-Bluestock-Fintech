@@ -25,7 +25,7 @@
       referrerpolicy="no-referrer"
     />
     <style>
-      /* {% include 'styles.css' %} */
+      {% include 'styles.css' %}
 
       .sidebar {
         height: 100vh !important;
@@ -107,29 +107,14 @@
       .right {
         width: 100%;
       }
-      .btn {
-        width: 120px;
-        height: 40px;
-      }
     </style>
   </head>
   <body>
     <div class="container-fluid d-flex flex-row m-0 p-0">
       <div class="sidebar px-4 pt-3 bg-sky">
         <div class="company-logo d-flex flex-row gap-3">
-          <div
-            class="placeholder-logo rounded-circle d-flex justify-content-center align-items-center"
-            id="company-logo-placeholder "
-            style="
-              background-color: #5a67ba;
-              width: 30px;
-              height: 30px;
-              color: #ffffff;
-            "
-          >
-            BF
-          </div>
-          <span class="fw-bold" style="color: #5a67ba">Bluestock Fintech</span>
+          <div class="placeholder-logo" id="company-logo-placeholder">BF</div>
+          <span class="fw-bold">Bluestock Fintech</span>
         </div>
 
         <!-- <ul class="nav flex-column"> -->
@@ -231,7 +216,7 @@
                 aria-controls="navbarNav"
                 aria-expanded="false"
                 aria-label="Toggle navigation"
-              >
+                >
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
@@ -245,7 +230,7 @@
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
                     >
-                      <!-- {% comment %} -->
+                  
                       <img
                         src="/ipo/static/ipo/assets/img/accounts.png"
                         alt="User"
@@ -274,9 +259,9 @@
           </nav>
         </main>
 
-        <!-- {% comment %} -->
+
         <main role="main" class="px-4">
-          <!-- {% endcomment %} -->
+   
           <div
             class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
             style="padding: 20px"
@@ -285,10 +270,10 @@
           </div>
           <div class="row" style="padding: 20px">
             <div class="col-md-4">
-              <div class="card border-0">
+              <div class="card" style="padding: 20px">
                 <h5
                   class="card-title"
-                  style="font-size: 15px; margin-bottom: 20px; font-weight: 600"
+                  style="font-size: 18px; margin-bottom: 20px; font-weight: 600"
                 >
                   IPO Dashboard India
                 </h5>
@@ -335,115 +320,64 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-4 border-start">
-              <div class="card border-0">
-                <div class="card-body mx-3">
-                  <h5 class="card-title mb-2">Quick Links</h5>
-                  <p class="mb-5" style="color: darkgray">
-                    Adipiscing elit, sed do eiusmod tempor
-                  </p>
-                  <ul class="list-unstyled d-flex flex-column gap-3">
-                    <li
-                      class="d-flex justify-content-between align-items-center border-bottom"
-                    >
-                      <a
-                        href="#"
-                        class="d-flex gap-3 align-items-center text-decoration-none pb-2"
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Quick Links</h5>
+                  <ul class="list-unstyled">
+                    <li>
+                      <a href="#"
                         ><img
-                          src="/ipo/static/ipo/assets/img/nse.svg"
+                          src="ipo/static/market_stat.png"
                           alt="NSE India"
-                          style="width: 28px; height: 28px"
-                          contain="fit"
-                          class="rounded-circle mb-2"
+                          style="width: 20px; height: 20px"
                         />
-                        <h5 style="font-size: 14px; color: #273240">
-                          NSE India
-                        </h5>
-                      </a>
-                      <h6 style="font-size: 14px; color: darkgrey">
-                        Visit Now
-                      </h6>
+                        NSE India</a
+                      >
                     </li>
-                    <li
-                      class="d-flex justify-content-between align-items-center border-bottom"
-                    >
-                      <a
-                        href="#"
-                        class="d-flex gap-3 align-items-center text-decoration-none pb-2"
+                    <li>
+                      <a href="#"
                         ><img
-                          src="/ipo/static/ipo/assets/img/bse.svg"
+                          src="ipo/static/market_stat.png"
                           alt="BSE India"
-                          style="width: 28px; height: 28px"
-                          contain="fit"
-                          class="rounded-circle mb-2"
+                          style="width: 20px; height: 20px"
                         />
-                        <h5 style="font-size: 14px; color: #273240">
-                          BSE India
-                        </h5>
-                      </a>
-                      <h6 style="font-size: 14px; color: darkgrey">
-                        Visit Now
-                      </h6>
+                        BSE India</a
+                      >
                     </li>
-                    <li
-                      class="d-flex justify-content-between align-items-center border-bottom"
-                    >
-                      <a
-                        href="#"
-                        class="d-flex gap-3 align-items-center text-decoration-none pb-2"
+                    <li>
+                      <a href="#"
                         ><img
-                          src="/ipo/static/ipo/assets/img/sebi.svg"
+                          src="ipo/static/market_stat.png"
                           alt="SEBI"
-                          style="width: 28px; height: 28px"
-                          contain="fit"
-                          class="rounded-circle mb-2"
+                          style="width: 20px; height: 20px"
                         />
-                        <h5 style="font-size: 14px; color: #273240">SEBI</h5>
-                      </a>
-                      <h6 style="font-size: 14px; color: darkgrey">
-                        Visit Now
-                      </h6>
+                        SEBI</a
+                      >
                     </li>
-                    <li
-                      class="d-flex justify-content-between align-items-center border-bottom"
-                    >
-                      <a
-                        href="#"
-                        class="d-flex gap-3 align-items-center text-decoration-none pb-2"
+                    <li>
+                      <a href="#"
                         ><img
-                          src="/ipo/static/ipo/assets/img/money.svg"
+                          src="ipo/static/market_stat.png"
                           alt="Money Control"
-                          style="width: 28px; height: 28px"
-                          contain="fit"
-                          class="rounded-circle mb-2"
-                          fit
+                          style="width: 20px; height: 20px"
                         />
-                        <h5 style="font-size: 14px; color: #273240">
-                          Money Control
-                        </h5>
-                      </a>
-                      <h6 style="font-size: 14px; color: darkgrey">
-                        Visit Now
-                      </h6>
+                        Money Control</a
+                      >
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
-            <div class="col-md-4 border-start">
-              <div class="card border-0">
-                <div class="card-body text-center d-flex flex-wrap">
-                  <div class="card-body text-left">
-                    <h5 class="card-title">Main Board IPO</h5>
-                    <p>From 01 Jan 2024</p>
-                  </div>
-                  <button class="btn mt-3 border" style="color: #5a67ba">
-                    View Report
-                  </button>
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Main Board IPO</h5>
+                  <p>From 01 Jan 2024</p>
                   <div class="doughnut-chart">
                     <!-- Placeholder for the chart -->
                   </div>
-                  <!-- <button class="btn btn-primary mt-3">View Report</button> -->
+                  <button class="btn btn-primary mt-3">View Report</button>
                 </div>
               </div>
             </div>
